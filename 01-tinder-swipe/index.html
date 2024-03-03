@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>100 Proyectos JS - 01 - Tinder Swipe</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>
+          <img src="./tinder-logo.webp" alt="Tinder Logo" />
+        </header>
+
+        <div class="cards">
+          <article>
+            <img
+              src="./photos/2.webp"
+              alt="Alex, brown hair man, 25 years old"
+            />
+            <h2>Alex <span>25</span></h2>
+            <div class="choice nope">NOPE</div>
+            <div class="choice like">LIKE</div>
+          </article>
+
+          <article>
+            <img src="./photos/1.webp" alt="Leila, redhead, 23 years old" />
+            <h2>Leila <span>23</span></h2>
+            <div class="choice nope">NOPE</div>
+            <div class="choice like">LIKE</div>
+          </article>
+
+          <span>
+            No hay más personas cerca de ti...<br />
+            Vuelve a intentarlo más tarde
+          </span>
+        </div>
+
+        <footer>
+          <button class="is-undo" aria-label="undo"></button>
+          <button class="is-big is-remove" aria-label="remove"></button>
+          <button class="is-start" aria-label="start"></button>
+          <button class="is-big is-fav" aria-label="fav"></button>
+          <button class="is-zap" aria-label="zap"></button>
+        </footer>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  background: #e5e5e5;
+}
+.white-bkg {
+  position: absolute;
+  background: #f6f6f6;
+  inset: 0;
+  z-index: -10;
+}
+.shadow {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+main {
+  background: url('./iphone.webp') no-repeat;
+  background-size: contain;
+  width: 320px;
+  height: 640px;
+  display: flex;
+  position: relative;
+}
+
+section {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 32px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 6px;
+  margin: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: start;
+  padding-left: 1rem;
+
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 0 24px;
+  justify-content: center;
+  align-items: center;
+
+  & button {
+    background: url('./tinder-icons.webp') no-repeat 0px 0px / 175px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    transition: scale 0.3s ease;
+
+    &:hover {
+      scale: 1.4;
+    }
+
+    &.is-big {
+      background-size: 250px;
+      height: 48px;
+      width: 48px;
+    }
+
+    &.is-undo {
+      background-position: -140px 0px;
+    }
+
+    &.is-remove {
+      background-position: -150px 0px;
+    }
+
+    &.is-fav {
+      background-position: -50px 0px;
+    }
+
+    &.is-star {
+      background-position: -70px 0px;
+    }
+  }
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  & > span {
+    display: grid;
+    place-content: center;
+    color: #777;
+    font-size: 14px;
+    text-align: center;
+    height: 100%;
+    z-index: -1;
+  }
+
+  & article {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    cursor: grab;
+    inset: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    &.go-left {
+      transform: translateX(-150%) rotate(-20deg) !important;
+    }
+
+    &.go-right {
+      transform: translateX(150%) rotate(20deg) !important;
+    }
+
+    &.go-left,
+    &.go-right {
+      transition: transform 0.3s ease-in-out, rotate 0.3s ease-in-out !important;
+    }
+
+    &.reset {
+      transition: transform 0.3s ease-in-out !important;
+      transform: translateX(0) !important;
+    }
+
+    & .choice {
+      border: 3px solid;
+      border-radius: 8px;
+      color: black;
+      z-index: 9999;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 4px 8px;
+      font-size: 24px;
+      font-weight: bold;
+      width: fit-content;
+      opacity: 0;
+    }
+
+    & .nope {
+      border-color: #f44336;
+      background: #f44336;
+      color: white;
+      transform: rotate(20deg);
+    }
+
+    & .like {
+      border-color: #4caf50;
+      background: #4caf50;
+      color: white;
+      transform: rotate(-20deg);
+      left: 16px;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & h2 {
+      color: #ccc;
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      padding: 16px;
+      z-index: 3;
+      background: linear-gradient(to top, #00000088 20%, transparent 60%);
+    }
+
+    & span {
+      color: #fff;
+      margin-left: 6px;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+  }
+}
